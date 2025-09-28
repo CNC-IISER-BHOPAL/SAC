@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Arrival Guide | SAC IISER Bhopal</title>
+    <link rel="icon" type="images/x-icon" href="./images/SAC Logo.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/eecc9ab967.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/images/SAC_Logo.png" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'theme-primary': '#fae9bd',
+                        'theme-secondary': '#e8d5a1',
+                        'theme-dark': '#c8a965',
+                        'theme-text': '#3a2e1c',
+                        'theme-light-bg': '#fdf8ec',
+                    },
+                    fontFamily: {
+        // Add 'Inter' as the first font in the sans-serif stack
+        sans: ['Inter', 'sans-serif'],
+      }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth FAQ transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+    </style>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-theme-light-bg font- text-theme-text">
+  
+  <div class="blurred"></div>
+
+  <div class="scrollup" style="z-index: 999999999;">
+    <a href="#home">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </div>
+
+  <header id="main-header" class="absolute top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <div class="flex items-center gap-3">
+            <a href="https://www.iiserb.ac.in" target="_blank">
+                <img src="../images/SAC_Logo.png" alt="IISERB Logo" class="h-12 w-auto">
+            </a>
+            <h1 class="text-2xl font-bold text-theme-text hidden sm:block">SAC@IISERB</h1>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-xl font-bold text-theme-text">
+            <a href="index.html" class="hover:text-theme-dark transition-colors">SAC</a>
+            <a href="#essential-resources" class="hover:text-theme-dark transition-colors">Resources</a>
+            <a href="#faq" class="hover:text-theme-dark transition-colors">FAQs</a>
+            <a href="#contact" class="hover:text-theme-dark transition-colors">Contact</a>
+            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA94NbQqS7NGlb5JjI6zWZjzJGn_L6g2NostRejwr8lQ2b5g/viewform" target="_blank" class="hover:text-theme-dark transition-colors" title="Feedback">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m16 1c1.6569 0 3 1.34315 3 3 0 .55228-.4477 1-1 1s-1-.44772-1-1-.4477-1-1-1h-12c-.55228 0-1 .44772-1 1v16c0 .5523.44772 1 1 1h12c.5523 0 1-.4477 1-1v-1c0-.5523.4477-1 1-1s1 .4477 1 1v1c0 1.6569-1.3431 3-3 3h-12c-1.65685 0-3-1.3431-3-3v-16c0-1.65685 1.34315-3 3-3z"></path>
+                    <path clip-rule="evenodd" d="m20.7991 8.20087c-.2998-.29983-.7859-.29983-1.0858 0l-7.7967 7.79683c-.1474.1473-.2451.3371-.2793.5427l-.1645.9868.9868-.1645c.2056-.0342.3954-.1319.5427-.2792l7.7968-7.79684c.2999-.29984.2999-.78596 0-1.08579zm-2.5-1.41421c1.0809-1.08088 2.8334-1.08089 3.9143-.00001 1.0808 1.08089 1.0808 2.83334 0 3.91425l-7.7968 7.7968c-.4422.4421-1.0114.735-1.6282.8378l-.9868.1645c-1.3536.2256-2.5272-.9479-2.30159-2.3016l.16447-.9868c.1028-.6168.39572-1.186.83782-1.6282z" fill-rule="evenodd"></path>
+                    <path d="m5 7c0-.55228.44772-1 1-1h8c.5523 0 1 .44772 1 1s-.4477 1-1 1h-8c-.55228 0-1-.44772-1-1z"></path>
+                    <path d="m5 11c0-.5523.44772-1 1-1h4c.5523 0 1 .4477 1 1s-.4477 1-1 1h-4c-.55228 0-1-.4477-1-1z"></path>
+                    <path d="m5 15c0-.5523.44772-1 1-1h1c.55228 0 1 .4477 1 1s-.44772 1-1 1h-1c-.55228 0-1-.4477-1-1z"></path>
+                </svg>
+            </a> -->
+        </nav>
+
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-theme-text text-2xl">
+                <i class="fas fa-bars text-black"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-theme-primary/95 backdrop-blur-sm">
+        <div class="flex justify-center items-center h-full">
+            <button id="close-btn" class="absolute top-6 right-6 text-theme-text text-3xl">&times;</button>
+            <nav class="flex flex-col items-center gap-8 text-2xl font-medium text-theme-text">
+                <a href="index.html" class="hover:text-theme-dark transition-colors">SAC</a>
+                <a href="#essential-resources" class="hover:text-theme-dark transition-colors">Resources</a>
+                <a href="#faq" class="hover:text-theme-dark transition-colors">FAQs</a>
+                <a href="#contact" class="hover:text-theme-dark transition-colors">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="bg-theme-primary text-center py-20 px-4 relative pt-32">
+    <div class="absolute inset-0 md:inset-0 lg:inset-16 bg-cover bg-center opacity-50 rounded-xl" style="background-image: url('images/maine.jpg');"></div>
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-6xl font-bold text-theme-text mb-4 drop-shadow-lg">Your Journey of Discovery Begins Here!</h1>
+      <p class="text-lg font-semibold md:text-xl text-theme-text/90 max-w-3xl mx-auto mb-8 drop-shadow-md">Welcome to IISER Bhopal, Batch of 2025! The Student Activity Council (SAC) is excited to have you join our vibrant community.</p>
+      <a href="#essential-resources" class="inline-block bg-theme-dark hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform transform hover:scale-105 mb-4">Get Started</a>
+  </div>
+</section>
+
+<section id="essential-resources" class="py-20 px-4 bg-gray-50">
+  <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Essential Resources</h2>
+      <p class="text-center text-lg text-gray-600 mb-12">Your ultimate guide to navigating your first days at IISER Bhopal.</p>
+
+      <div class="flex flex-col md:flex-row items-center justify-between mx-auto max-w-7xl bg-white p-8 rounded-2xl shadow-lg my-16">
+          <div class="md:w-1/2 w-full">
+              <img alt="IISER Bhopal Campus Map with Registration Checkpoints" loading="lazy" src="images\map.webp" class="rounded-lg shadow-md w-full h-auto object-cover">
+          </div>
+          <div class="md:w-1/2 w-full mt-8 md:mt-0 md:ml-8">
+              <h3 class="text-3xl font-extrabold text-gray-900">Registration Checkpoints</h3>
+              <ul class="mt-6 space-y-4 text-lg text-gray-700">
+                  <li class="flex items-start">
+                      <span class="mr-3 mt-1 text-2xl text-green-500">•</span>
+                      <div><strong>Main Gate:</strong> You will be guided to your respective hostels.</div>
+                  </li>
+                  <li class="flex items-start">
+                      <span class="mr-3 mt-1 text-2xl text-green-500">•</span>
+                      <div><strong>Hostel Area:</strong> Volunteers will hand out welcome kits and you will complete your hostel and mess registration.</div>
+                  </li>
+                  <li class="flex items-start">
+                      <span class="mr-3 mt-1 text-2xl text-green-500">•</span>
+                      <div><strong>LHC Area:</strong> Complete the verification of documents and final formalities.</div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 items-stretch max-w-7xl mx-auto">
+          
+          <div class="flex-1 flex flex-col items-center text-center bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-900">Payment Guide</h3>
+              <p class="text-gray-600 mt-2 mb-4">A step-by-step guide for all your fee payments.</p>
+              <img alt="Payment Guide Cover" loading="lazy" src="images\payment.webp" class="mt-4 h-64 w-full object-contain rounded-lg">
+              <div class="mt-auto pt-6">
+                  <a href="https://drive.google.com/file/d/1WBuX9F7VAz1jnyEUyv4FYrCrz6r-eh8i/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-theme-secondary px-6 py-3 text-base font-semibold text-theme-text hover:bg-theme-dark transition-colors duration-300">
+                     View Payment Guide
+                  </a>
+              </div>
+          </div>
+
+          <div class="flex-1 flex flex-col items-center text-center bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-900">Frequently Asked Questions</h3>
+              <p class="text-gray-600 mt-2 mb-4">Find answers to common questions about campus life.</p>
+              <img alt="FAQ Icon" loading="lazy" src="images\faq.webp" class="mt-4 h-64 w-full object-contain rounded-lg">
+              <div class="mt-auto pt-6">
+                  <a href="https://drive.google.com/file/d/1W3HvFiwpkGYBSbXH4VCyFTTEPttFvbeC/view" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-theme-secondary px-6 py-3 text-base font-semibold text-theme-text hover:bg-theme-dark transition-colors duration-300">
+                      View FAQs PDF
+                  </a>
+              </div>
+              
+          </div>
+
+      </div>
+      <p class="text-center text-lg text-gray-600 mb-6 mt-12">All the above resources are prepared by the members of our Student Development Council (SDC) at IISER Bhopal.</p>
+  </div>
+</section>
+
+    <section id="contact"  class="bg-theme-secondary py-20 px-4 ">
+      <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-theme-text mb-4">Contact Us</h2>
+            <p class="text-center text-lg text-theme-text/70 mb-12">Here are the contact details of the key personnel to assist you during your arrival on campus.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-4">
+
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Siva </h4>
+                          <p class="text-theme-text/80">SAC President</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 76193 21579</a>
+                      <a href="mailto:sivareddy@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>samba22@iiserb.ac.in</a>
+                  </div>
+              </div>
+
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-theme-text">Shailesh </h4>
+                        <p class="text-theme-text/80">CNC Secretary</p>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 90099 44572</a>
+                    <a href="mailto:shaileshk@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>shailesh22@iiserb.ac.in</a>
+                </div>
+            </div>
+        
+      
+        
+            <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">M</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-theme-text">Murchana </h4>
+                        <p class="text-theme-text/80">Cultural Council Secretary</p>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 81339 99971</a>
+                    <a href="mailto:murchanab@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>murchana22@iiserb.ac.in</a>
+                </div>
+            </div>
+        
+            <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+              <div class="flex items-center mb-4">
+                  <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">D</div>
+                  <div>
+                      <h4 class="font-bold text-lg text-theme-text">Divyansh </h4>
+                      <p class="text-theme-text/80">ESIC Secretary</p>
+                  </div>
+              </div>
+              <div class="mt-auto">
+                  <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 77270 37452</a>
+                  <a href="mailto:divyanshg@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>divyanshg22@iiserb.ac.in</a>
+              </div>
+          </div>
+
+          <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+            <div class="flex items-center mb-4">
+                <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                <div>
+                    <h4 class="font-bold text-lg text-theme-text">Swarda </h4>
+                    <p class="text-theme-text/80">FALC Secretary</p>
+                </div>
+            </div>
+            <div class="mt-auto">
+                <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 91755 41352</a>
+                <a href="mailto:swardak@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>kadam22@iiserb.ac.in</a>
+            </div>
+        </div>
+
+        <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+          <div class="flex items-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">A</div>
+              <div>
+                  <h4 class="font-bold text-lg text-theme-text">Anirudha</h4>
+                  <p class="text-theme-text/80">RC Secretary, Students Affairs</p>
+              </div>
+          </div>
+          <div class="mt-auto">
+              <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 73851 55474</a>
+              <a href="mailto:anirudhap@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>anirudha22@iiserb.ac.in</a>
+          </div>
+      </div>
+  
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+          <div class="flex items-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">T</div>
+              <div>
+                  <h4 class="font-bold text-lg text-theme-text">Taashif </h4>
+                  <p class="text-theme-text/80">RC Secretary, Academic Affairs</p>
+              </div>
+          </div>
+          <div class="mt-auto">
+              <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 74886 34526</a>
+              <a href="mailto:taashifb@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>taashif22@iiserb.ac.in</a>
+          </div>
+      </div>
+
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+        <div class="flex items-center mb-4">
+            <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+            <div>
+                <h4 class="font-bold text-lg text-theme-text">Samriddha </h4>
+                <p class="text-theme-text/80">Science Council Secretary</p>
+            </div>
+        </div>
+        <div class="mt-auto">
+            <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 98306 06317</a>
+            <a href="mailto:samriddhag@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>samriddha22@iiserb.ac.in</a>
+        </div>
+    </div>
+
+
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-theme-text">Sidharth</h4>
+                        <p class="text-theme-text/80">SDC Secretary</p>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 82925 14511</a>
+                    <a href="mailto:siddharthr@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>sidharth22@iiserb.ac.in</a>
+                </div>
+            </div>
+          
+            
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Swarnim </h4>
+                          <p class="text-theme-text/80">Sports Council Secretary</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 96081 22420</a>
+                      <a href="mailto:swarnimr@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>swarnim22@iiserb.ac.in</a>
+                  </div>
+              </div>
+          
+             
+            
+          
+             
+          
+              
+          
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">M</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Manas </h4>
+                          <p class="text-theme-text/80">ASR-UG</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 88005 14137</a>
+                      <a href="mailto:manasn@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>manas22@iiserb.ac.in</a>
+                  </div>
+              </div>
+          
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">A</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Arpan</h4>
+                          <p class="text-theme-text/80">Vice secretary CNC</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 84209 96043</a>
+                      <a href="mailto:arpan@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>arpan22@iiserb.ac.in</a>
+                  </div>
+              </div>
+          
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">S</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Shlok</h4>
+                          <p class="text-theme-text/80">Vice secretary CNC</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 82186 35012</a>
+                      <a href="mailto:shlok@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>shlok23@iiserb.ac.in</a>
+                  </div>
+              </div>
+          
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">P</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Prakhar</h4>
+                          <p class="text-theme-text/80">CNC Member</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 73557 32399</a>
+                      <a href="mailto:prakhar@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>prakhar23@iiserb.ac.in</a>
+                  </div>
+              </div>
+          
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                  <div class="flex items-center mb-4">
+                      <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">A</div>
+                      <div>
+                          <h4 class="font-bold text-lg text-theme-text">Anushka</h4>
+                          <p class="text-theme-text/80">CNC Member</p>
+                      </div>
+                  </div>
+                  <div class="mt-auto">
+                      <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 </a>
+                      <a href="mailto:anushka@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>anushkat23@iiserb.ac.in</a>
+                  </div>
+              </div>
+              <div class="bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-theme-dark text-white flex items-center justify-center text-2xl font-bold mr-4 shrink-0">A</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-theme-text">Sankul</h4>
+                        <p class="text-theme-text/80">CNC Member</p>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <a href="tel:+910000000000" class="flex items-center text-theme-text hover:text-theme-dark mb-2"><i class="fas fa-mobile-alt w-5 mr-2" aria-hidden="true"></i>+91 88898 44735</a>
+                    <a href="mailto:anushka@iiserb.ac.in" class="flex items-center text-theme-text hover:text-theme-dark"><i class="fas fa-envelope w-5 mr-2" aria-hidden="true"></i>sankul23@iiserb.ac.in</a>
+                </div>
+            </div>
+              
+          </div>
+        </div>
+    </section>
+    
+    <section id="faq" class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-theme-text mb-4">Frequently Asked Questions</h2>
+            <p class="text-center text-lg text-theme-text/70 mb-12">Find answers to common questions about admissions in IISER Bhopal.</p>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                        <span class="font-semibold text-lg text-theme-text">What do I need to bring to campus?</span>
+                        <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-6 text-theme-text/80">
+                        <p>ID Proof (+ Photocopies, at least 2)for self and parents ● Insurance Policy Copy ● Bedsheets(can also be bought upon arrival) ● Blanket (can also be bought uponarrival) ● Clothes ● Toiletries (Soap, Shampoo,Toothbrush and paste, etc) ● Sanitizer ● Mask ● Medicines ● Pillow case ● Stationary</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                        <span class="font-semibold text-lg text-theme-text">What can I buy on campus upon arrival?</span>
+                        <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-6 text-theme-text/80">
+                       <p>Bucket and mug ● Pillow ● Spoons ● Comb ● Lock and key ● Broom ● Soap case ● Dustbin ● Clothes hangers ● Clothes pins ● Bottles and various containers ● Cycles ● Quilt for winter ● Curtains ● Doormats ● Mattress ● Mirror ● Lab coat and goggles</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                        <span class="font-semibold text-lg text-theme-text">With what amenities is the campus equipped, to help me settle in better?</span>
+                        <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-6 text-theme-text/80">
+                       <p>The campus is quite student friendly and will provide a smooth hostel transition. You will be guided to areas where you can buy mattresses and cycles along with general supplies like mugs, buckets, curtains, etc. We suggest you have a look at these services and if you still feel something missing, you can arrange for it from nearby markets in the city. We’d advise you to bring a laptop with you, but if you can’t arrange one, there is a computer center that offers desktops for use. Lifestyle services offered include a regular laundry and ironing service, E-Rickshaws and quite a few options to eat out.</p>
+                    </div>
+                </div>
+
+                 <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                        <span class="font-semibold text-lg text-theme-text">What facilities will I be provided with, in my room?</span>
+                        <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-6 text-theme-text/80">
+                        <p>Every student is allotted a room to be shared with another student. A room will contain an almirah, 2 cots, 1 study table with 3 drawers, a LAN port, a curtain rod above the window, two slots to fit light bulbs/LED bulbs in addition to a tube light. Each student will be required to buy his or her own mattress, curtains, bucket, etc. There are 2 sets of bathrooms on each floor and 2 elevators working 24x7 in the hostel. Wi-Fi routers are present throughout each floor, to provide internet access. There is an air-conditioned common room for every hostel which has a television set and a refrigerator free to be used by any member of the hostel. There is also a Laundry room in each hostel equipped with washing machines and a dryer on a pay-per-use basis. For further details, you may contact the caretaker or warden of your hostel.</p>
+                    </div>
+                </div>
+
+                 <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                        <span class="font-semibold text-lg text-theme-text">Should I be worried about ragging on campus? What are the institute policies regarding this?</span>
+                        <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-6 text-theme-text/80">
+                        <p>Ragging is practically non-existent on campus, and there is absolutely nothing to worry about. Before entering college, there is a compulsory Anti-Ragging form that needs to be filled and signed by each student. There is an active and responsive Anti-Ragging Cell on campus where complaints can be registered and quick, effective and immediate action will be taken to sort out the issue. There is also a Counselling Cell where students can go if and when they feel that they need a safe, comforting and experienced voice. This includes Peer Counsellors of various batches.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                  <div class="faq-question flex justify-between items-center cursor-pointer p-6 bg-theme-primary hover:bg-theme-secondary transition-colors">
+                      <span class="font-semibold text-lg text-theme-text">How are the sports facilities on campus?</span>
+                      <span class="faq-toggle text-2xl text-theme-text transform transition-transform duration-300">+</span>
+                  </div>
+                  <div class="faq-answer px-6 text-theme-text/80">
+                      <p>The campus provides a large array of sports facilities for everyone to use. We have two basketball courts, a football field, two tennis courts, a cricket ground, a Kho-Kho and Kabaddi playing field and a badminton court. We have yoga, athletics, and a well-equipped gym. We also have trained coaches for sports, to help interested students hone themselves. The institute participates in the annual Inter-IISER Sports Meet (IISM) which is a multi-sport event in which all the IISERs, IISc, NISER and CEBS compete. Sangharsh (the intra-IISER meet), the Inter-Hostel Tournament and various weekend Mini Tournaments have garnered immense support and participation from the students as well as the faculties
+
+                      </p>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <div id="footerlast" class="footerlast">
+      <!--  Footer -->
+      <footer class="footer">
+        <div class="inner-footer">
+          <!--  for contact us info -->
+          <div class="footer-items">
+            <img loading="lazy" src="images/images_rendered/IISER Black Logo.png" style="
+                  height: 150px;
+                  aspect-ratio: 1/1;
+                  margin-right: auto !important;
+                  margin-bottom: 15px;
+                  display: block !important;
+                " />
+            <h3 class="footer-heading">Contact us</h3>
+            <ul>
+              <li>
+                <a target="_blank"
+                  href="https://www.google.com/maps/place/IISER+BHOPAL/@23.2857935,77.2706367,17z/data=!3m1!4b1!4m6!3m5!1s0x397c60d9f8872aef:0x9b99241b1431032!8m2!3d23.2857936!4d77.2755076!16s%2Fg%2F12xql9g02?entry=ttu"><i
+                    class="fa fa-map-marker" aria-hidden="true"></i>IISER
+                  Bhopal, Bhauri</a>
+              </li>
+              <li>
+                <a target="_blank" href="mailto:sac@iiserb.ac.in"><i class="fa fa-envelope"
+                    aria-hidden="true"></i>sac@iiserb.ac.in</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.instagram.com/sac_iiserb/"><i class="fa fa-instagram"
+                    aria-hidden="true"></i>instagram.com/sac_iiserb</a>
+              </li>
+              <li>
+                <a target="_blank"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeA94NbQqS7NGlb5JjI6zWZjzJGn_L6g2NostRejwr8lQ2b5g/viewform?usp=sf_link"><i
+                    class="fa-solid fa-comment" aria-hidden="true"></i> Feedback Form
+                </a>
+              </li>
+            </ul>
+            <!--   for social links -->
+            <div class="social-media"></div>
+          </div>
+          <div class="footer-items brdr-left">
+            <h3 class="footer-heading">Councils</h3>
+            <ul>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="https://www.youtube.com/@iiserbculturalcouncil9869/videos" target="_blank">Cultural Council</a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="https://students.iiserb.ac.in/cnc" target="_blank">Computer and Networking
+                    Council</a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="https://cs2.iiserb.ac.in/activities/prayaas.php" target="_blank">Environmental and Social
+                    Initiatives Council
+                  </a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="https://sites.google.com/d/1YfAHEMpPRmI9rUL3FGSAiJ9ezoDeElJV/p/1E4LypuWrDJyW58rHEGqgLcyvcicawYXI/edit"
+                    target="_blank">Fine Arts and Literary Council
+                  </a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="mailto: sciencecouncil@iiserb.ac.in" target="_blank">Science Council
+                  </a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="mailto: sportscouncil@iiserb.ac.in" target="_blank">Sports Council</a>
+                </div>
+              </li>
+              <li class="boards-footer-flex">
+                <div style="flex-grow: 1">
+                  <a href="mailto: sdc@iiserb.ac.in" target="_blank">Student Development Council</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--  for quick links  -->
+          <div class="footer-items">
+            <h3 class="footer-heading">Services</h3>
+            <ul>
+              <li>
+                <a href="Representativecouncil.html" target="_blank">Representative Council
+                </a>
+              </li>
+              <li>
+                <a href="https://www.iiserb.ac.in/hc" target="_blank">Health Center
+                </a>
+              </li>
+              <li>
+                <a href="https://www.iiserb.ac.in/dosa/counsellor" target="_blank">Councelling Cell
+                </a>
+              </li>
+              <li>
+                <a href="https://icdpc.iiserb.ac.in/" target="_blank">Placement Cell
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--  for some other links -->
+          <div class="footer-items">
+            <h3 class="footer-heading">Links</h3>
+            <ul>
+              <li>
+                <a href="https://www.iiserb.ac.in/doaa" target="_blank">Office, Academic Affairs
+                </a>
+              </li>
+              <li>
+                <a href="https://www.iiserb.ac.in/dosa" target="_blank">Office, Student Affairs
+                </a>
+              </li>
+              <li>
+                <a href="https://www.iiserb.ac.in/iwd/people" target="_blank">Office, Institute Works Department
+                </a>
+              </li>
+              <li>
+                <a href="https://www.iiserb.ac.in/vh/" target="_blank">Visitors' Hostel</a>
+              </li>
+            </ul>
+            <!-- <div class="scroll-top-button" onclick="scrollTopAnimated(500)">
+              Scroll to top<i class="fa fa-long-arrow-up" aria-hidden="true" style="margin-left: 10px"></i>
+            </div> -->
+          </div>
+        </div>
+        <!--   Footer Bottom start  -->
+        <div class="footer-bottom">
+          <span style="
+                color: var(--text);
+                font-size: 1.2em;
+                margin-bottom: 7px;
+                display: block;
+              ">Designed, Developed by
+            <a alt="asdf" href="https://www.linkedin.com/in/tanishq-sharma-5204bb249" target="_blank" style="
+                  font-family: Inter;
+                  color: var(--accent);
+                  text-decoration-color: #dadada;
+                  text-decoration: underline;
+                ">Tanishq Sharma</a>
+            ,
+            <a href="https://www.linkedin.com/in/shailesh-kachhi-681a041a2" target="_blank" style="
+            font-family: Inter;
+            color: var(--accent);
+            text-decoration-color: #dadada;
+            text-decoration: underline;
+          ">Shailesh Kachhi</a> & Maintained by
+            <a href="https:/students.iiserb.ac.in/cnc" target="_blank" style="
+                  font-family: Inter;
+                  color: var(--accent);
+                  text-decoration-color: #dadada;
+                  text-decoration: underline;
+                ">CNC</a></span>
+          <p>
+            Copyright &copy;2023 Student Activity Council, IISER Bhopal. All
+            Rights Reserved.
+          </p>
+        </div>
+      </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    
+                    // Toggle active class on the clicked item
+                    faqItem.classList.toggle('active');
+
+                    // Optional: Close other open FAQs
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const header = document.getElementById('main-header');
+        // The element right after the header
+        const nextElement = header.nextElementSibling;
+        
+        // Mobile menu elements
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        // --- Sticky Header Logic ---
+        const handleScroll = () => {
+            // Check if user has scrolled more than a small amount (e.g., 50px)
+            if (window.pageYOffset > 50) {
+                // When sticky, remove the absolute positioning and fix it to the top
+                header.classList.remove('absolute');
+                header.classList.add('fixed', 'bg-theme-primary', 'shadow-lg');
+            } else {
+                // When at the top, revert to absolute positioning
+                header.classList.add('absolute');
+                header.classList.remove('fixed', 'bg-theme-primary', 'shadow-lg');
+            }
+        };
+
+        // --- Mobile Menu Logic ---
+        const openMenu = () => {
+            mobileMenu.classList.remove('hidden');
+        };
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+        };
+
+        // --- Event Listeners ---
+        window.addEventListener('scroll', handleScroll);
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    });
+    </script>
+</body>
+</html>
